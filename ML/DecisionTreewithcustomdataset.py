@@ -64,7 +64,7 @@ print("\nClassification Report:\n", classification_report(y_test, y_pred))
 # Step 9: Visualize the Decision Tree
 plt.figure(figsize=(10,6))
 plot_tree(model,
-          feature_names=X.columns,
+          feature_names=list(X.columns),
           class_names=['No', 'Yes'],
           filled=True,
           rounded=True)
