@@ -15,7 +15,8 @@ from sklearn.cluster import KMeans
 km=KMeans(n_clusters=3)
 y_pred=km.fit_predict(data[["PetalLengthCm","PetalWidthCm"]])
 y_pred
-
+df["cluster"]=y_pred
+print(df)
 # Plotting the clusters
 plt.scatter(df["PetalLengthCm"][df["cluster"]==0], df["PetalWidthCm"][df["cluster"]==0], color='green', label ='Cluster 1')
 plt.scatter(df["PetalLengthCm"][df["cluster"]==1], df["PetalWidthCm"][df["cluster"]==1], color='red', label ='Cluster 2')
